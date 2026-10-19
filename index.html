@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="সোলায়মান বাদশা ও তাঁর পরিবারের প্রিয় মুহূর্তের ছবি নিয়ে স্মৃতির অ্যালবাম।">
+<meta property="og:title" content="স্মৃতির পাতা · সোলায়মান বাদশা">
+<meta property="og:description" content="পরিবারের প্রিয় মুহূর্তের ছবি নিয়ে স্মৃতির অ্যালবাম।">
+<meta property="og:image" content="https://solyman.store/img/01.jpg">
+<meta property="og:url" content="https://solyman.store/">
+<link rel="icon" href="img/favicon.png">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>স্মৃতির পাতা · সোলায়মান বাদশা</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@500;600;700&family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: photo-album pages — full-bleed cover, then three "chapters", each a masonry wall of prints with handwritten-style captions; lightbox for viewing */
+:root{
+  --paper:#f3f5f1; --card:#ffffff; --ink:#1f2a26; --muted:#5d6b65;
+  --leaf:#2f6b57; --leaf-soft:#dce9e2; --line:#d5ddd8; --shade:rgba(20,40,32,.12);
+  --display:"Noto Serif Bengali","SolaimanLipi","Kalpurush",serif;
+  --body:"Noto Sans Bengali","SolaimanLipi","Kalpurush","Nirmala UI",sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#121a17; --card:#1b2521; --ink:#e7eee9; --muted:#9fb0a8;
+  --leaf:#7cc4a6; --leaf-soft:#1f3a30; --line:#2b3933; --shade:rgba(0,0,0,.45); color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#121a17; --card:#1b2521; --ink:#e7eee9; --muted:#9fb0a8;
+  --leaf:#7cc4a6; --leaf-soft:#1f3a30; --line:#2b3933; --shade:rgba(0,0,0,.45); color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.8;margin:0;letter-spacing:0;word-break:normal;overflow-wrap:break-word;font-kerning:normal;text-rendering:optimizeLegibility}
+h1,h2,h3{font-synthesis:none}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+
+/* header */
+.site-head{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:var(--card);border-bottom:1px solid var(--line)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:31;background:var(--card)}
+.site-head .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:10px;flex-wrap:wrap}
+.brand{font-family:var(--display);font-weight:700;font-size:22px;color:var(--ink);text-decoration:none;line-height:1.4}
+.brand span{color:var(--leaf)}
+.nav{display:flex;flex-wrap:wrap;gap:8px}
+.nav a{font-size:15px;font-weight:500;color:var(--ink);text-decoration:none;padding:6px 14px;border-radius:999px;border:1px solid var(--line);line-height:1.6;white-space:nowrap}
+.nav a:hover{border-color:var(--leaf);color:var(--leaf)}
+.nav a.solid{background:var(--leaf);border-color:var(--leaf);color:var(--card)}
+.nav a.solid:hover{filter:brightness(1.08);color:var(--card)}
+.nav a:focus-visible,.brand:focus-visible{outline:2px solid var(--leaf);outline-offset:2px}
+@media (max-width:640px){.nav{width:100%;overflow-x:auto;flex-wrap:nowrap;padding-bottom:2px;scrollbar-width:none}.nav::-webkit-scrollbar{display:none}}
+
+/* hero slider */
+.hero{position:relative;color:#fff;overflow:hidden;background:#1c2b25;height:clamp(380px,62vw,620px)}
+.slide{position:absolute;inset:0;opacity:0;transition:opacity 1s ease}
+.slide.on{opacity:1}
+.slide img{width:100%;height:100%;object-fit:cover;transform:scale(1.04);transition:transform 6s ease}
+.slide.on img{transform:scale(1)}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,20,16,.1) 30%,rgba(10,20,16,.8));pointer-events:none}
+.hero .wrap{position:absolute;left:0;right:0;bottom:0;z-index:2;padding-block:0 clamp(56px,7vw,76px);display:grid;gap:10px}
+.eyebrow{font-size:15px;font-weight:500;opacity:.9}
+.hero h1{font-family:var(--display);font-weight:700;font-size:clamp(38px,7vw,76px);line-height:1.35;margin:0;text-wrap:balance}
+.hero p{margin:0;max-width:34em;font-size:clamp(16px,2.2vw,19px);opacity:.95;line-height:1.75}
+.hero .meta{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:14px;opacity:.85}
+.dots{position:absolute;z-index:3;left:0;right:0;bottom:22px;display:flex;justify-content:center;gap:8px}
+.dots button{all:unset;cursor:pointer;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.45);transition:width .3s,background .3s}
+.dots button.on{width:28px;border-radius:6px;background:#fff}
+.dots button:focus-visible{outline:2px solid #9fe0c3;outline-offset:3px}
+.sbtn{all:unset;position:absolute;z-index:3;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:rgba(0,0,0,.3);color:#fff;font-size:24px;cursor:pointer}
+.sbtn:hover{background:rgba(0,0,0,.5)}
+.sbtn:focus-visible{outline:2px solid #9fe0c3}
+.sprev{left:max(12px,env(safe-area-inset-left,0px))}.snext{right:max(12px,env(safe-area-inset-right,0px))}
+@media (max-width:600px){.sbtn{display:none}}
+@media (prefers-reduced-motion:reduce){.slide,.slide img{transition:none}}
+.chapter{scroll-margin-top:90px}#contact{scroll-margin-top:80px}
+
+/* chapters */
+main{padding-block:clamp(36px,6vw,72px)}
+.chapter{display:grid;gap:22px;margin-bottom:clamp(48px,8vw,88px)}
+.chapter header{display:grid;gap:4px;max-width:40em}
+.chapter .num{font-family:var(--display);color:var(--leaf);font-size:15px}
+.chapter h2{font-family:var(--display);font-weight:400;font-size:clamp(28px,4.4vw,42px);line-height:1.2;margin:0;text-wrap:balance}
+.chapter header p{margin:0;color:var(--muted)}
+
+.wall{columns:3 280px;column-gap:20px}
+.print{break-inside:avoid;margin:0 0 20px;background:var(--card);padding:10px 10px 12px;border-radius:4px;
+  box-shadow:0 1px 2px var(--shade),0 10px 24px -14px var(--shade);transition:transform .25s ease,box-shadow .25s ease}
+.print button{all:unset;display:block;width:100%;cursor:zoom-in;border-radius:2px;overflow:hidden}
+.print button:focus-visible{outline:3px solid var(--leaf);outline-offset:3px}
+.print img{display:block;width:100%;height:auto;background:var(--leaf-soft)}
+.print figcaption{font-family:var(--display);font-weight:500;color:var(--muted);font-size:15px;padding:10px 4px 0;line-height:1.4}
+@media (hover:hover){.print:hover{transform:translateY(-3px) rotate(-.3deg);box-shadow:0 2px 4px var(--shade),0 18px 34px -16px var(--shade)}}
+
+footer{border-top:1px solid var(--line);background:var(--card);color:var(--muted);font-size:15px}
+.foot{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:32px 48px;padding-block:40px 28px}
+.foot section{display:grid;gap:8px;align-content:start;min-width:0}
+.label{font-size:14px;color:var(--leaf);font-weight:600}
+footer h3{font-family:var(--display);font-weight:400;font-size:24px;color:var(--ink);margin:0;line-height:1.3}
+.contact{list-style:none;margin:0;padding:0;display:grid;gap:4px}
+.contact li{display:flex;flex-wrap:wrap;gap:4px 12px;min-width:0}
+.contact .k{min-width:72px;color:var(--muted)}
+.contact a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line);overflow-wrap:anywhere;user-select:all}
+.contact a:hover{border-color:var(--leaf);color:var(--leaf)}
+.contact a:focus-visible{outline:2px solid var(--leaf);outline-offset:2px}
+.devrow{display:flex;gap:16px;align-items:center}
+.logo{flex:none;width:76px;height:76px;border-radius:14px;background:#1d2024;display:grid;place-items:center;padding:6px}
+.logo img{width:100%;height:auto}
+.logo:focus-visible,.devname:focus-visible{outline:2px solid var(--leaf);outline-offset:3px}
+.devname{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line)}
+.devname span{font-size:.7em;color:var(--leaf)}
+.devname:hover{color:var(--leaf);border-color:var(--leaf)}
+.copy{border-top:1px solid var(--line);padding-block:16px 28px;font-size:13px}
+
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:50;background:rgba(8,14,12,.94);display:grid;grid-template-rows:1fr auto;
+  padding:calc(env(safe-area-inset-top,0px) + 56px) max(12px,env(safe-area-inset-right,0px)) calc(env(safe-area-inset-bottom,0px) + 12px) max(12px,env(safe-area-inset-left,0px))}
+.lb img{max-width:100%;max-height:100%;margin:auto;object-fit:contain;align-self:center;justify-self:center;border-radius:3px}
+.lb .stage{display:grid;min-height:0}
+.lb .bar{display:flex;align-items:center;justify-content:space-between;gap:12px;color:#e6ece9;padding-top:12px;font-size:15px}
+.lb .cap{font-family:var(--display);min-width:0}
+.lb .count{font-variant-numeric:tabular-nums;opacity:.7;white-space:nowrap}
+.lb .btn{all:unset;cursor:pointer;width:46px;height:46px;border-radius:50%;display:grid;place-items:center;color:#fff;background:rgba(255,255,255,.1);font-size:22px;line-height:1}
+.lb .btn:hover{background:rgba(255,255,255,.2)}
+.lb .btn:focus-visible{outline:2px solid #9fe0c3;outline-offset:2px}
+.lb .close{position:absolute;top:calc(env(safe-area-inset-top,0px) + 8px);right:max(12px,env(safe-area-inset-right,0px))}
+.lb .prev,.lb .next{position:absolute;top:50%;transform:translateY(-50%)}
+.lb .prev{left:max(12px,env(safe-area-inset-left,0px))}
+.lb .next{right:max(12px,env(safe-area-inset-right,0px))}
+@media (max-width:600px){.lb .prev,.lb .next{top:auto;bottom:calc(env(safe-area-inset-bottom,0px) + 56px);transform:none}}
+@media (prefers-reduced-motion:reduce){.print{transition:none}}
+
+/* ===== 3D UI layer ===== */
+:root{--hi:rgba(255,255,255,.9);--lo:rgba(30,60,48,.18);--edge:#bfd2c8;--leaf-deep:#1f4d3e;--raise:0 1px 0 var(--hi) inset,0 -2px 0 rgba(0,0,0,.06) inset,0 2px 0 var(--edge),0 10px 22px -10px var(--lo),0 24px 40px -24px var(--lo)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--hi:rgba(255,255,255,.08);--lo:rgba(0,0,0,.6);--edge:#0c1311;--leaf-deep:#3f8c70}}
+:root[data-theme="dark"]{--hi:rgba(255,255,255,.08);--lo:rgba(0,0,0,.6);--edge:#0c1311;--leaf-deep:#3f8c70}
+
+/* header as a raised bar */
+.site-head{background:linear-gradient(180deg,var(--card),var(--paper));border-bottom:0;box-shadow:0 1px 0 var(--hi) inset,0 2px 0 var(--edge),0 12px 24px -16px var(--lo)}
+.brand{text-shadow:0 1px 0 var(--hi),0 2px 0 var(--edge)}
+
+/* 3D pill buttons */
+.nav a{background:linear-gradient(180deg,var(--card),var(--paper));border:1px solid var(--line);
+  box-shadow:0 1px 0 var(--hi) inset,0 3px 0 var(--edge),0 6px 12px -6px var(--lo);
+  transform:translateY(0);transition:transform .12s ease,box-shadow .12s ease,color .2s}
+.nav a:hover{transform:translateY(-1px);box-shadow:0 1px 0 var(--hi) inset,0 4px 0 var(--edge),0 10px 16px -8px var(--lo)}
+.nav a:active{transform:translateY(3px);box-shadow:0 1px 0 var(--hi) inset,0 0 0 var(--edge),0 2px 4px -2px var(--lo)}
+.nav a.solid{background:linear-gradient(180deg,color-mix(in srgb,var(--leaf) 82%,#fff),var(--leaf));border-color:var(--leaf-deep);
+  box-shadow:0 1px 0 rgba(255,255,255,.35) inset,0 3px 0 var(--leaf-deep),0 8px 14px -6px var(--lo)}
+.nav a.solid:hover{filter:none;box-shadow:0 1px 0 rgba(255,255,255,.35) inset,0 4px 0 var(--leaf-deep),0 12px 18px -8px var(--lo)}
+.nav a.solid:active{box-shadow:0 1px 0 rgba(255,255,255,.35) inset,0 0 0 var(--leaf-deep),0 2px 4px -2px var(--lo)}
+.nav{padding-bottom:6px}
+
+/* slider controls */
+.sbtn{background:linear-gradient(180deg,rgba(255,255,255,.28),rgba(255,255,255,.08));backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+  border:1px solid rgba(255,255,255,.35);box-shadow:0 1px 0 rgba(255,255,255,.5) inset,0 4px 0 rgba(0,0,0,.35),0 12px 20px -8px rgba(0,0,0,.6);transition:transform .12s,box-shadow .12s}
+.sbtn:hover{background:linear-gradient(180deg,rgba(255,255,255,.38),rgba(255,255,255,.14))}
+.sbtn:active{transform:translateY(calc(-50% + 3px));box-shadow:0 1px 0 rgba(255,255,255,.5) inset,0 1px 0 rgba(0,0,0,.35),0 4px 8px -4px rgba(0,0,0,.6)}
+.dots button{box-shadow:0 2px 0 rgba(0,0,0,.35),0 1px 0 rgba(255,255,255,.6) inset}
+.hero{box-shadow:0 18px 40px -24px var(--lo)}
+
+/* chapter heading plate */
+.chapter header{background:linear-gradient(180deg,var(--card),var(--paper));padding:18px 22px;border-radius:16px;box-shadow:var(--raise);width:fit-content;max-width:100%}
+
+/* photo prints as 3D tiles */
+.wall{perspective:1200px}
+.print{border-radius:14px;padding:10px 10px 14px;background:linear-gradient(180deg,var(--card),var(--paper));box-shadow:var(--raise);
+  transform-style:preserve-3d;transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateZ(0);transition:transform .35s ease,box-shadow .35s ease;will-change:transform}
+.print button{border-radius:9px;box-shadow:0 2px 6px -2px var(--lo) inset}
+.print img{border-radius:9px;transform:translateZ(18px)}
+.print figcaption{transform:translateZ(10px)}
+@media (hover:hover){.print:hover{transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateY(-6px);
+  box-shadow:0 1px 0 var(--hi) inset,0 3px 0 var(--edge),0 22px 34px -14px var(--lo),0 40px 60px -30px var(--lo)}}
+.print:active{transform:translateY(2px) scale(.99)}
+
+/* footer cards */
+footer{background:var(--paper)}
+.foot section{background:linear-gradient(180deg,var(--card),var(--paper));padding:20px 22px;border-radius:18px;box-shadow:var(--raise)}
+.logo{box-shadow:0 1px 0 rgba(255,255,255,.15) inset,0 4px 0 #0b0c0e,0 10px 18px -8px var(--lo);transition:transform .12s,box-shadow .12s}
+.logo:hover{transform:translateY(-2px)}
+.logo:active{transform:translateY(3px);box-shadow:0 1px 0 rgba(255,255,255,.15) inset,0 1px 0 #0b0c0e,0 3px 6px -3px var(--lo)}
+
+/* lightbox buttons */
+.lb .btn{background:linear-gradient(180deg,rgba(255,255,255,.22),rgba(255,255,255,.06));border:1px solid rgba(255,255,255,.25);
+  box-shadow:0 1px 0 rgba(255,255,255,.4) inset,0 4px 0 rgba(0,0,0,.5),0 10px 18px -8px #000}
+.lb img{box-shadow:0 30px 60px -20px #000}
+
+@media (prefers-reduced-motion:reduce){.print,.nav a,.sbtn,.logo{transition:none}.print{transform:none!important}}
+</style>
+</head>
+<body>
+
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="#top">স্মৃতির <span>পাতা</span></a>
+    <nav class="nav" aria-label="মেনু">
+      <a href="#ch1">একসাথে আমরা</a>
+      <a href="#ch2">বাবা ও মেয়েরা</a>
+      <a href="#ch3">বেড়ানোর দিন</a>
+      <a class="solid" href="#contact">যোগাযোগ</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="top" aria-roledescription="স্লাইডার" aria-label="প্রিয় ছবি">
+  <div class="slide on"><img src="img/01.jpg" alt="মেলার দিনে পুরো পরিবার"></div>
+  <div class="slide"><img src="img/13.jpg" alt="বিকেলের পারিবারিক সেলফি" loading="lazy"></div>
+  <div class="slide"><img src="img/08.jpg" alt="লেকের পাড়ে" loading="lazy"></div>
+  <div class="slide"><img src="img/14.jpg" alt="পানির ধারে বাবা-মেয়ে" loading="lazy"></div>
+  <button class="sbtn sprev" id="sPrev" aria-label="আগের স্লাইড">‹</button>
+  <button class="sbtn snext" id="sNext" aria-label="পরের স্লাইড">›</button>
+  <div class="wrap">
+    <span class="eyebrow">পারিবারিক অ্যালবাম</span>
+    <h1>স্মৃতির পাতা</h1>
+    <p>সোলায়মান বাদশা ও তাঁর পরিবারের কিছু প্রিয় মুহূর্ত। মেলার ভিড়, নদীর ধারের বিকেল, পার্কের সবুজ ঘাস আর একসাথে তোলা হাসিমুখের ছবি।</p>
+    <div class="meta"><span>১৪টি ছবি</span><span>৩টি অধ্যায়</span><span>ঢাকা, বাংলাদেশ</span></div>
+  </div>
+  <div class="dots" id="dots"></div>
+</section>
+
+<main class="wrap" id="album"></main>
+
+<footer id="contact">
+  <div class="wrap foot">
+    <section class="owner" aria-labelledby="ownerH">
+      <span class="label">সাইটের মালিক</span>
+      <h3 id="ownerH">সোলায়মান বাদশা</h3>
+      <ul class="contact">
+        <li><span class="k">ফোন</span><a href="tel:+8801680801122">+880 1680-801122</a></li>
+        <li><span class="k">ইমেইল</span><a href="mailto:mdsolaymanh421@gmail.com">mdsolaymanh421@gmail.com</a></li>
+        <li><span class="k">ওয়েবসাইট</span><span>solyman.store</span></li>
+        <li><span class="k">ফেসবুক</span><a href="https://www.facebook.com/solyman.badsha.2025" target="_blank" rel="noopener">Solyman Badsha ↗</a></li>
+        <li><span class="k">পেজ</span><a href="https://www.facebook.com/profile.php?id=61588699043457" target="_blank" rel="noopener">Solyman Official 2.0 ↗</a></li>
+      </ul>
+    </section>
+    <section class="dev" aria-labelledby="devH">
+      <span class="label">ডিজাইন ও ডেভেলপমেন্ট</span>
+      <div class="devrow">
+        <a class="logo" href="https://bongshaltech.com" target="_blank" rel="noopener" aria-label="Bongshal Tech ওয়েবসাইট"><img src="img/bongshaltech-logo.png" width="240" height="240" alt="Bongshal Tech লোগো"></a>
+        <div>
+          <h3 id="devH"><a class="devname" href="https://bongshaltech.com" target="_blank" rel="noopener">Bongshal Tech <span aria-hidden="true">↗</span></a></h3>
+          <ul class="contact">
+            <li><a href="https://bongshaltech.com" target="_blank" rel="noopener">bongshaltech.com</a></li>
+            <li><a href="mailto:bongshaltech@gmail.com">bongshaltech@gmail.com</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div class="wrap copy">© ২০২৬ স্মৃতির পাতা · সোলায়মান বাদশা</div>
+</footer>
+
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="ছবি দেখুন">
+  <button class="btn close" id="lbClose" aria-label="বন্ধ করুন">✕</button>
+  <div class="stage"><img id="lbImg" alt=""></div>
+  <button class="btn prev" id="lbPrev" aria-label="আগের ছবি">‹</button>
+  <button class="btn next" id="lbNext" aria-label="পরের ছবি">›</button>
+  <div class="bar"><span class="cap" id="lbCap"></span><span class="count" id="lbCount"></span></div>
+</div>
+
+<script>
+document.documentElement.lang='bn';
+const chapters=[
+ {num:"অধ্যায় ১",title:"একসাথে আমরা",text:"পরিবারের সবাই মিলে তোলা ছবিগুলো। এগুলোতেই সবচেয়ে বেশি হাসি।",
+  photos:[["01",1600,902,"মেলার দিনে পুরো পরিবার"],["02",958,960,"এক ফ্রেমে সবার হাসি"],["13",1600,722,"বিকেলের সেলফি"],["06",720,1600,"সবুজের মাঝে দুজন"]]},
+ {num:"অধ্যায় ২",title:"বাবা ও মেয়েরা",text:"ছোট দুই মেয়ের সাথে বাবার আদরের মুহূর্ত।",
+  photos:[["03",902,1600,"গোলাপি জামায় দুই মেয়ে"],["04",902,1600,"ঘরের ভেতর একটু দুষ্টুমি"],["14",1600,1200,"পানির ধারে বাবা-মেয়ে"],["05",720,1600,"সন্ধ্যার আলোয় একা"]]},
+ {num:"অধ্যায় ৩",title:"বেড়ানোর একটি দিন",text:"সেতু, লেক, সিঁড়ি আর পার্কের ঘাসে কাটানো একটা পুরো বিকেল।",
+  photos:[["07",720,1600,"সেতুর ওপর সূর্য ডোবার আগে"],["08",1600,720,"লেকের পাড়ে"],["09",722,1600,"সিঁড়িতে অপেক্ষা"],["10",1600,720,"সিঁড়ির ধাপে মা ও মেয়েরা"],["11",720,1600,"ঘাসের ওপর দুই বোন"],["12",720,1600,"মায়ের পাশে বসে"]]}
+];
+const flat=[];
+const album=document.getElementById('album');
+chapters.forEach(ch=>{
+  const s=document.createElement('section');s.className='chapter';s.id='ch'+(chapters.indexOf(ch)+1);
+  s.innerHTML=`<header><span class="num">${ch.num}</span><h2>${ch.title}</h2><p>${ch.text}</p></header>`;
+  const wall=document.createElement('div');wall.className='wall';
+  ch.photos.forEach(([id,w,h,cap])=>{
+    const i=flat.length;flat.push({src:`img/${id}.jpg`,cap});
+    const f=document.createElement('figure');f.className='print';
+    f.innerHTML=`<button type="button" aria-label="${cap} — বড় করে দেখুন"><img src="img/${id}.jpg" width="${w}" height="${h}" alt="${cap}" loading="lazy" decoding="async"></button><figcaption>${cap}</figcaption>`;
+    f.querySelector('button').addEventListener('click',()=>open(i));
+    wall.appendChild(f);
+  });
+  s.appendChild(wall);album.appendChild(s);
+});
+const lb=document.getElementById('lb'),img=document.getElementById('lbImg'),cap=document.getElementById('lbCap'),cnt=document.getElementById('lbCount');
+const bn=n=>String(n).replace(/\d/g,d=>'০১২৩৪৫৬৭৮৯'[d]);
+let cur=0,last=null;
+function show(i){cur=(i+flat.length)%flat.length;img.src=flat[cur].src;img.alt=flat[cur].cap;cap.textContent=flat[cur].cap;cnt.textContent=`${bn(cur+1)} / ${bn(flat.length)}`}
+function open(i){last=document.activeElement;show(i);lb.hidden=false;document.body.style.overflow='hidden';document.getElementById('lbClose').focus()}
+function close(){lb.hidden=true;document.body.style.overflow='';last&&last.focus()}
+document.getElementById('lbClose').onclick=close;
+document.getElementById('lbPrev').onclick=()=>show(cur-1);
+document.getElementById('lbNext').onclick=()=>show(cur+1);
+lb.addEventListener('click',e=>{if(e.target===lb||e.target.classList.contains('stage'))close()});
+document.addEventListener('keydown',e=>{if(lb.hidden)return;if(e.key==='Escape')close();if(e.key==='ArrowLeft')show(cur-1);if(e.key==='ArrowRight')show(cur+1)});
+let sx=null;lb.addEventListener('touchstart',e=>{sx=e.touches[0].clientX},{passive:true});
+lb.addEventListener('touchend',e=>{if(sx===null)return;const dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>50)show(cur+(dx<0?1:-1));sx=null});
+
+// hero slider
+(()=>{const sl=[...document.querySelectorAll('.slide')],dots=document.getElementById('dots');let i=0,t;
+const go=n=>{sl[i].classList.remove('on');dots.children[i].classList.remove('on');i=(n+sl.length)%sl.length;sl[i].classList.add('on');dots.children[i].classList.add('on')};
+sl.forEach((_,k)=>{const b=document.createElement('button');b.setAttribute('aria-label',`স্লাইড ${'০১২৩৪৫৬৭৮৯'[k+1]}`);if(!k)b.className='on';b.onclick=()=>{go(k);start()};dots.appendChild(b)});
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+function start(){clearInterval(t);if(!reduce)t=setInterval(()=>go(i+1),4500)}
+document.getElementById('sPrev').onclick=()=>{go(i-1);start()};document.getElementById('sNext').onclick=()=>{go(i+1);start()};
+const h=document.querySelector('.hero');let x=null;h.addEventListener('touchstart',e=>{x=e.touches[0].clientX},{passive:true});
+h.addEventListener('touchend',e=>{if(x===null)return;const d=e.changedTouches[0].clientX-x;if(Math.abs(d)>50){go(i+(d<0?1:-1));start()}x=null});
+start();})();
+
+// 3D tilt on photo tiles
+if(matchMedia('(hover:hover) and (pointer:fine)').matches&&!matchMedia('(prefers-reduced-motion: reduce)').matches){
+ document.querySelectorAll('.print').forEach(el=>{
+  el.addEventListener('pointermove',e=>{const r=el.getBoundingClientRect();const x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
+   el.style.setProperty('--ry',(x*10).toFixed(2)+'deg');el.style.setProperty('--rx',(-y*10).toFixed(2)+'deg')});
+  el.addEventListener('pointerleave',()=>{el.style.setProperty('--ry','0deg');el.style.setProperty('--rx','0deg')});
+ });
+}
+</script>
+
+</body>
+</html>
